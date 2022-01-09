@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- External JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/styles/takeQuiz.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet">
+    <!--  JS -->
+    <script type="text/javascript" src="/scripts/quizListener.js"></script>
+
+</head>
+<body>
+    <div class="quiz-box">
+      <div class ="top-elements">
+        <div id="title">Quiz Name!</div>
+        <img src="/images/brain3.png">
+      </div>
+      <br>
+      <label id="quiz-length-bar-label" for="quiz-length-bar">0/0</label>
+      <progress id="quiz-length-bar" value="0" max="100"></progress>
+      <div>Points:</div><div id="score">0</div>
+      <div class="timer">
+        <!-- <div class="time_text">Time Left</div> -->
+        <div class="timer_sec"><h2 id="question-timer">5</h2>
+        </div>
+      </div>
+      <div id="questions-box">
+        <h1 id="question">Get Ready!</h1>
+        <div id="answer-buttons">
+          <button id="a" type="button">A</button>
+          <button id="b" type="button">B</button>
+          <button id="c" type="button">C</button>
+          <button id="d" type="button">D</button>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

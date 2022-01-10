@@ -1,0 +1,7 @@
+CREATE TABLE User_Attempts (
+  id INTEGER NOT NULL,
+  score INTEGER NOT NULL DEFAULT 0,
+  attempt_date TIMESTAMP(0) NOT NULL,
+  Quizzes_id INTEGER NOT NULL,
+  PRIMARY KEY (id)
+);

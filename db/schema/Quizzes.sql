@@ -1,0 +1,7 @@
+CREATE TABLE Quizzes (
+  id INTEGER NOT NULL,
+  description TEXT NOT NULL,
+  is_public SMALLINT NOT NULL DEFAULT 0,
+  Users_id INTEGER NOT NULL,
+  PRIMARY KEY (id)
+);

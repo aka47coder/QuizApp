@@ -18,6 +18,26 @@ $(document).ready(function() {
         });
     }
       //populate the menu box with all quizzes taken
+     
+
+      //clicking the all time button grabs all quiz results and displays them
+      $("#all-time").on("click", function(event) {
+        $.ajax({
+            method:'GET',
+            url: `/results/all`
+          })
+          .then((data)=>{
+            $(document.getElementById("results-container")).empty();
+            for (const record in data) {
+                $(document.getElementById("results-container")).append(data[record].title);
+                $(document.getElementById("results-container")).append('<br>');
+                $(document.getElementById("results-container")).append(`${data[record].total}/50`);
+                $(document.getElementById("results-container")).append('<br>');
+            };
+            $(this).parent().children().removeClass("clicked");
+            $(document.getElementById("all-time")).addClass("clicked");
+          });
+      });
       $.ajax({
         method:'GET',
         url: `/results/quizzes/${user_id}`
@@ -48,23 +68,4 @@ $(document).ready(function() {
             });
         });
       })
-
-      //clicking the all time button grabs all quiz results and displays them
-      $("#all-time").on("click", function(event) {
-        $.ajax({
-            method:'GET',
-            url: `/results/all`
-          })
-          .then((data)=>{
-            $(document.getElementById("results-container")).empty();
-            for (const record in data) {
-                $(document.getElementById("results-container")).append(data[record].title);
-                $(document.getElementById("results-container")).append('<br>');
-                $(document.getElementById("results-container")).append(`${data[record].total}/50`);
-                $(document.getElementById("results-container")).append('<br>');
-            };
-            $(this).parent().children().removeClass("clicked");
-            $(document.getElementById("all-time")).addClass("clicked");
-          });
-      });
 });

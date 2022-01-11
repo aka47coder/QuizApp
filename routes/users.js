@@ -5,6 +5,8 @@
  * See: https://expressjs.com/en/guide/using-middleware.html#middleware.router
  */
 
+// const express = require('express');
+// const router  = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
@@ -23,4 +25,9 @@ module.exports = (db) => {
   return router;
 };
 
-
+// router.get('/login/:userId', (req, res) => {
+//   // if using cookie-session middleware
+//   req.session.user_id = req.params.userId;
+//   // redirect the user somewhere
+//   res.redirect('/');
+// });

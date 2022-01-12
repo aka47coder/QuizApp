@@ -3,6 +3,6 @@ DROP TABLE IF EXISTS questions CASCADE;
 
 CREATE TABLE questions (
   id SERIAL PRIMARY KEY NOT NULL,
-  question VARCHAR(255) NOT NULL,
+  question VARCHAR(400) NOT NULL,
   quiz_id INTEGER REFERENCES quizzes(id)
 );

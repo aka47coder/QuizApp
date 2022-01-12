@@ -1,7 +1,7 @@
 //listens during the quiz
 
 $(document).ready(function() {
-  $(document.getElementById("questions-box")).hide();
+  $(document.getElementById("qb")).hide();
   const quizID = window.location.pathname.slice(7);
   console.log("is this a string ?", quizID);
   let cq = -1;
@@ -10,7 +10,7 @@ $(document).ready(function() {
   let answer = null;
   let attemptNumber = 0;
 
-  //https://css-tricks.com/snippets/jquery/shuffle-children/
+  
   
 
   
@@ -19,7 +19,7 @@ $(document).ready(function() {
     questionTime -= 1;
     document.getElementById("question-timer").innerHTML = questionTime;
     if (questionTime === 0) {
-      $(document.getElementById("questions-box")).show();
+      $(document.getElementById("qb")).show();
       try {
         //get id of the answer picked
         answer = document.getElementsByClassName("clicked")[0].id;
@@ -64,7 +64,7 @@ $(document).ready(function() {
         console.log("how long is this>",quiz.length);
         //change question and answers
         document.getElementById("question").innerHTML = quiz[cq].question;
-        $(document.getElementById("answer-buttons")).shuffleChildren();
+        $(document.getElementById("ab1")).shuffleChildren();
         document.getElementById("a").innerHTML = quiz[cq].correct_answer;
         document.getElementById("b").innerHTML = quiz[cq].incorrect_answers[0];
         document.getElementById("c").innerHTML = quiz[cq].incorrect_answers[1];

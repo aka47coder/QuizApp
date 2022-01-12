@@ -17,10 +17,10 @@ $(document).ready(function() {
           $(document.getElementById("all-time")).addClass("clicked");
         });
     }
-      //populate the menu box with all quizzes taken
+      //fill in the menu box with all of the quizzes you've taken
      
 
-      //clicking the all time button grabs all quiz results and displays them
+      //The all-time button collects and shows all quiz results.
       $("#all-time").on("click", function(event) {
         $.ajax({
             method:'GET',
@@ -48,7 +48,7 @@ $(document).ready(function() {
           }
       })
       .then(()=>{
-        //listener for clicking quizzes on left side. displays them in main box
+        //listener for quizzes on the left side. shows them in the main box
         $(".quizzes-completed").on("click", function(event) {
             $(this).parent().children().removeClass("clicked");
             $(this).addClass("clicked");

@@ -21,30 +21,30 @@ $(document).ready(function() {
     if (questionTime === 0) {
       $(document.getElementById("qb")).show();
       try {
-        //get id of the answer picked
+        //obtain the id of the selected response
         answer = document.getElementsByClassName("clicked")[0].id;
         console.log("answer picked:", answer);
         //reset buttons
         $(document.getElementsByClassName("clicked")).removeClass("clicked");
       }
       catch (err) {answer = null;};
-      //add points to total if answer correct
+      //If the answer is accurate, add points to the total.
       if (answer === 'a') {
         totalPoints += 10;
         document.getElementById("score").innerText = totalPoints;
-        //send update to the db (UPDATE quiz_attempt_results SET total = #newTotalPoints#)
+        //(UPDATE quiz attempt results SET total = #newTotalPoints#) send an update to the database
         $.ajax({
           method:'POST',
           url: `/results/${quizID}`,
           data: {totalPoints, attemptNumber}
         });
       };
-      //reset timer and increment question
+      //reset the timer and ask a new question
       questionTime = 5;
       cq++;
-      //check if quiz is done, if true go to results page
+      //Check to see if the quiz is completed; if so, proceed to the results page.
       if ((cq) === quiz.length) {
-        // one last score update before results page
+        // Before going to the results page, there's one more score update.
         $.ajax({
           method:'POST',
           url: `/results/${quizID}`,
@@ -62,14 +62,14 @@ $(document).ready(function() {
         $(document.getElementById("quiz-length-bar")).val(cq+1);
         document.getElementById("quiz-length-bar").max = quiz.length;
         console.log("how long is this>",quiz.length);
-        //change question and answers
+        //switch up the questions and answers
         document.getElementById("question").innerHTML = quiz[cq].question;
         $(document.getElementById("ab1")).shuffleChildren();
         document.getElementById("a").innerHTML = quiz[cq].correct_answer;
         document.getElementById("b").innerHTML = quiz[cq].incorrect_answers[0];
         document.getElementById("c").innerHTML = quiz[cq].incorrect_answers[1];
         document.getElementById("d").innerHTML = quiz[cq].incorrect_answers[2];
-        //adds a class to the selected answer
+        //gives the selected answer a class
         $("button").on("click", function(event) {
           event.preventDefault();
           $(this).parent().children().removeClass("clicked");

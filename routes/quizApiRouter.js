@@ -14,13 +14,13 @@ router.get('/', (req, res) => {
   .then((aq) => {
     // transform into format we want
     q = aq.results.map((ap1) => {
-      // this creates object we store our question into
+      // This generates an object in which we can store our inquiry.
         const fq = {
             question: ap1.question,
         };
-        // this gets the answers, spread operator to get an array of incorrect answers
+        // This retrieves the answers and uses the spread operator to generate an array of wrong responses.
         const ac = [...ap1.incorrect_answers];
-        // this will put the answer in a random position
+        // The response will be placed in a random position as a result of this.
         fq.answer = Math.floor(Math.random() * 3) + 1;
         // this will put the correct answer at the right index
         ac.splice(
@@ -28,7 +28,7 @@ router.get('/', (req, res) => {
             0,
             ap1.correct_answer
         );
-        // this iterates through the answer choices and references each choice
+        // This loops through the answer options, referencing each one.
         ac.forEach((answer, index) => {
             fq['Answer' + (index + 1)] = answer;
         });

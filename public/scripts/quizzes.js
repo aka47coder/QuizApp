@@ -4,23 +4,23 @@ fetch('https://opentdb.com/api.php?amount=1&category=15&type=multiple')
 return res.json();
 })
 .then((aq) => {
-// transform into format we want
+// transcode into the desired format
 q = aq.results.map((aqq) => {
-// this creates object we store our question into
+// This generates an object in which we can store our inquiry.
 const fq = {
 question: aqq.question,
 };
-// this gets the answers, spread operator to get an array of incorrect answers
+// This retrieves the answers and uses the spread operator to generate an array of wrong responses.
 const answerChoices = [...aqq.incorrect_answers];
-// this will put the answer in a random position
+// The response will be placed in a random position as a result of this.
 fq.answer = Math.floor(Math.random() * 3) + 1;
-// this will put the correct answer at the right indexzzz
+// This will place the correct answer in the appropriate indexzzz.
 answerChoices.splice(
 fq.answer - 1,
 0,
 aqq.correct_answer
 );
-// this iterates through the answer choices and references each choice
+//This loops through the answer options, referencing each one.
 answerChoices.forEach((answer, index) => {
 fq['Answer' + (index + 1)] = answer;
 });

@@ -2,37 +2,37 @@
 $(document).ready(function() {
     const user_id = 1;
     //fill main box with all time results by defult
-    if(!document.getElementById("flag")) {
+    if(!document.getElementById("ourflag")) {
       $.ajax({
           method:'GET',
           url: `/results/all`
         })
         .then((data)=>{
           for (const record in data) {
-              $(document.getElementById("results-container")).append(data[record].title);
-              $(document.getElementById("results-container")).append('<br>');
-              $(document.getElementById("results-container")).append(`${data[record].total}/50`);
-              $(document.getElementById("results-container")).append('<br>');
+              $(document.getElementById("rc")).append(data[record].title);
+              $(document.getElementById("rc")).append('<br>');
+              $(document.getElementById("rc")).append(`${data[record].total}/50`);
+              $(document.getElementById("rc")).append('<br>');
           };
           $(document.getElementById("all-time")).addClass("clicked");
         });
     }
-      //populate the menu box with all quizzes taken
+      //fill in the menu box with all of the quizzes you've taken
      
 
-      //clicking the all time button grabs all quiz results and displays them
+      //The all-time button collects and shows all quiz results.
       $("#all-time").on("click", function(event) {
         $.ajax({
             method:'GET',
             url: `/results/all`
           })
           .then((data)=>{
-            $(document.getElementById("results-container")).empty();
+            $(document.getElementById("rc")).empty();
             for (const record in data) {
-                $(document.getElementById("results-container")).append(data[record].title);
-                $(document.getElementById("results-container")).append('<br>');
-                $(document.getElementById("results-container")).append(`${data[record].total}/50`);
-                $(document.getElementById("results-container")).append('<br>');
+                $(document.getElementById("rc")).append(data[record].title);
+                $(document.getElementById("rc")).append('<br>');
+                $(document.getElementById("rc")).append(`${data[record].total}/50`);
+                $(document.getElementById("rc")).append('<br>');
             };
             $(this).parent().children().removeClass("clicked");
             $(document.getElementById("all-time")).addClass("clicked");
@@ -48,7 +48,7 @@ $(document).ready(function() {
           }
       })
       .then(()=>{
-        //listener for clicking quizzes on left side. displays them in main box
+        //listener for quizzes on the left side. shows them in the main box
         $(".quizzes-completed").on("click", function(event) {
             $(this).parent().children().removeClass("clicked");
             $(this).addClass("clicked");
@@ -59,11 +59,11 @@ $(document).ready(function() {
             })
             .then((data)=>{
                 for (const record in data) {
-                    $(document.getElementById("results-container")).empty();
-                    $(document.getElementById("results-container")).append(data[record].title);
-                    $(document.getElementById("results-container")).append('<br>');
-                    $(document.getElementById("results-container")).append(`${data[record].total}/50`);
-                    $(document.getElementById("results-container")).append('<br>');
+                    $(document.getElementById("rc")).empty();
+                    $(document.getElementById("rc")).append(data[record].title);
+                    $(document.getElementById("rc")).append('<br>');
+                    $(document.getElementById("rc")).append(`${data[record].total}/50`);
+                    $(document.getElementById("rc")).append('<br>');
                 }; 
             });
         });

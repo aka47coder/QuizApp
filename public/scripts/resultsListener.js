@@ -2,17 +2,17 @@
 $(document).ready(function() {
     const user_id = 1;
     //fill main box with all time results by defult
-    if(!document.getElementById("flag")) {
+    if(!document.getElementById("ourflag")) {
       $.ajax({
           method:'GET',
           url: `/results/all`
         })
         .then((data)=>{
           for (const record in data) {
-              $(document.getElementById("results-container")).append(data[record].title);
-              $(document.getElementById("results-container")).append('<br>');
-              $(document.getElementById("results-container")).append(`${data[record].total}/50`);
-              $(document.getElementById("results-container")).append('<br>');
+              $(document.getElementById("rc")).append(data[record].title);
+              $(document.getElementById("rc")).append('<br>');
+              $(document.getElementById("rc")).append(`${data[record].total}/50`);
+              $(document.getElementById("rc")).append('<br>');
           };
           $(document.getElementById("all-time")).addClass("clicked");
         });
@@ -27,12 +27,12 @@ $(document).ready(function() {
             url: `/results/all`
           })
           .then((data)=>{
-            $(document.getElementById("results-container")).empty();
+            $(document.getElementById("rc")).empty();
             for (const record in data) {
-                $(document.getElementById("results-container")).append(data[record].title);
-                $(document.getElementById("results-container")).append('<br>');
-                $(document.getElementById("results-container")).append(`${data[record].total}/50`);
-                $(document.getElementById("results-container")).append('<br>');
+                $(document.getElementById("rc")).append(data[record].title);
+                $(document.getElementById("rc")).append('<br>');
+                $(document.getElementById("rc")).append(`${data[record].total}/50`);
+                $(document.getElementById("rc")).append('<br>');
             };
             $(this).parent().children().removeClass("clicked");
             $(document.getElementById("all-time")).addClass("clicked");
@@ -59,11 +59,11 @@ $(document).ready(function() {
             })
             .then((data)=>{
                 for (const record in data) {
-                    $(document.getElementById("results-container")).empty();
-                    $(document.getElementById("results-container")).append(data[record].title);
-                    $(document.getElementById("results-container")).append('<br>');
-                    $(document.getElementById("results-container")).append(`${data[record].total}/50`);
-                    $(document.getElementById("results-container")).append('<br>');
+                    $(document.getElementById("rc")).empty();
+                    $(document.getElementById("rc")).append(data[record].title);
+                    $(document.getElementById("rc")).append('<br>');
+                    $(document.getElementById("rc")).append(`${data[record].total}/50`);
+                    $(document.getElementById("rc")).append('<br>');
                 }; 
             });
         });

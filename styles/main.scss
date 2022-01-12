@@ -1,6 +1,10 @@
 body{
   background: linear-gradient(to right,#0555e6,#021b79);
 }
+.navbar-brand img{
+  width:90px;
+  
+}
 .home-content .col-md-3{
   height: calc(100vh - 56px);
 }

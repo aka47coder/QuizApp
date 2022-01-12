@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+     <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
 
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
@@ -18,48 +23,14 @@
   <body>
     <header>
       <%- include('./nav') %>
-      <div class="main">
-      <% if (!user_id) { %>
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-          <div class="item active">
-            <img class="d-block" src="./images/gaming.jpg" alt="First slide">
-            <div class="carousel-caption d-none d-md-block">
-              <h2>TRY YOUR KNOWLEDGE ON A BROAD VARIETY OF GENRES</h2>
-              <p><b>We've got quizzes for any genre you can think of!</b></p>
-            </div>
-          </div>
-          <div class="item">
-            <img class="d-block" src="./images/music.jpg" alt="Second slide">
-            <div class="carousel-caption d-none d-md-block">
-              <h2>WANT TO CREATE A QUIZ? WANT TO SHARE IT?</h2>
-              <p><b>Want to test others? Want to share your quiz to the public? Do it all!</b></p>
-            </div>
-          </div>
-          <div class="item">
-            <img class="d-block" src="./images/movies.jpg" alt="Third slide">
-            <div class="carousel-caption d-none d-md-block">
-              <h2>DO YOU HAVE WHAT IT WHAT TAKES?</h2>
-              <p><b>Take a quiz and find out now!</b></p>
-            </div>
-          </div>
-        </div>
-        <% } %>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
+     <header id="profile">
+      <img src="/images/QUIZIFY1.png" width="800px" height="900px">
+    </div>
+    </header>
+
       <div class="container-fluid">
+
+
         <div class="row">
           <div class="col-md-12">
             <div class="row">

@@ -1,0 +1,10 @@
+body{
+  background: linear-gradient(to right,#0555e6,#021b79);
+}
+.home-content .col-md-3{
+  height: calc(100vh - 56px);
+}
+.list-group-item{
+  margin-bottom: .5rem;
+  border-radius: 12px !important;
+}

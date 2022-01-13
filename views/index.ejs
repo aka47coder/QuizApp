@@ -1,20 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Home Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<head>
-  <title>Home Page</title>
+    <link rel="stylesheet" href="/styles/index.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+     <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/indexListener.js"></script>
 
-  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-  <script type="text/javascript" src="/scripts/app.js"></script>
-</head>
+  </head>
 
-<body>
-  <h1>Have fun! 🥔</h1>
-</body>
+  <body>
+    <header>
+      <%- include('./nav') %>
+     <header id="profile">
+      <img src="/images/QUIZIFY1.png" width="800px" height="900px">
+    </div>
+    </header>
 
+      <div class="container-fluid">
+
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-6" id="user-made-quizzes">
+                <h2>
+                  <%= name %>'s Quizzes
+                </h2>
+                <p>
+                  Here's a list of quizzes made by you!
+                </p>
+                <table class="table" id="user-quizzes">
+                  <thead>
+                    <tr>
+                      <th>
+                        Take Quiz
+                      </th>
+                      <th>
+                        Name of Quiz
+                      </th>
+                      <th>
+                        Category of Quiz
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td id="quizid">
+                      </td>
+                      <td id="usernamequiz">
+                      </td>
+                      <td id="usercatogory">
+                      </td>
+                    </tr>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="col-md-6">
+                <h2>
+                  Public Quizzes
+                </h2>
+                <p>
+                  Here's a list of quizzes made by anyone!
+                </p>
+                <table class="table" id="private-quizzes">
+                  <thead>
+                    <tr>
+                      <th>
+                        Take Quiz
+                      </th>
+                      <th>
+                        Name of Quiz
+                      </th>
+                      <th>
+                        Category of Quiz
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td id="pubquizid">
+                      </td>
+                      <td id="nameofquiz">
+                      </td>
+                      <td id="publiccatquiz1">
+                      </td>
+                     </tr>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <% if (user_id) { %>
+              <div class="col-md-6" id="private-data">
+                <h2>
+                  <%= name %>'s Private Quizzes
+                </h2>
+                <p>
+                  Here's a list of quizzes you've chosen to not make Public (yet)!
+                </p>
+                <table class="table" id="user-private-quizzes">
+                  <thead>
+                    <tr>
+                      <th>
+                        Take Quiz
+                      </th>
+                      <th>
+                        Name of Quiz
+                      </th>
+                      <th>
+                        Category of Quiz
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td id="userprivatequiznum12">
+                      </td>
+                      <td id="userpricquiz12">
+                      </td>
+                      <td id="usercatquiz">
+                      </td>
+                    </tr>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+               <% } %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

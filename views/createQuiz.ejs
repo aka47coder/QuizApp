@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Quiz</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/scripts/createQuizListener.js"></script>
+
+    <!-- App CSS -->
+    <link rel="stylesheet" href="/styles/createQuiz.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+</head>
+<body>
+  <header>
+    <%- include('./nav') %>
+  </header>
+  <main class="create-quiz">
+    <form action="/quiz/create" method="POST">
+        <label for="q1"></label><br>
+        <h2 class="create-quiz-title white"> Create Your Quiz Here</h2>
+        <h3 class="white">Don't forget to name your quiz and place your correct answer in the proper field!</h3>
+        <br>
+        <input type="text" class="title" name="title" placeholder="Title of my Quiz" required>
+        <br>
+        <br>
+        <input type="text" class="category" name="category" placeholder="Category of Quiz" required>
+        <br>
+        <br>
+        <input type="text" class="q" name="q1" placeholder="Question 1" required>
+        <div class='input-form'>
+            <input type="text" class="a" name="q1a1" placeholder="Correct Answer" required>
+            <input type="text" class="a" name="q1a2" placeholder="B" required>
+            <input type="text" class="a" name="q1a3" placeholder="C" required>
+            <input type="text" class="a" name="q1a4" placeholder="D" required>
+        </div>
+        <br>
+        <input type="text" class="q" name="q2" placeholder="Question 2" required>
+        <div>
+          <input type="text" class="a" name="q2a1" placeholder="Correct Answer" required>
+            <input type="text" class="a" name="q2a2" placeholder="B" required>
+            <input type="text" class="a" name="q2a3" placeholder="C" required>
+            <input type="text" class="a" name="q2a4" placeholder="D" required>
+        </div>
+        <br>
+        <input type="text" class="q" name="q3" placeholder="Question 3" required>
+        <div>
+          <input type="text" class="a" name="q3a1" placeholder="Correct Answer" required>
+            <input type="text" class="a" name="q3a2" placeholder="B" required>
+            <input type="text" class="a" name="q3a3" placeholder="C" required>
+            <input type="text" class="a" name="q3a4" placeholder="D" required>
+        </div>
+        <br>
+        <input type="text" class="q" name="q4" placeholder="Question 4" required>
+        <div>
+          <input type="text" class="a" name="q4a1" placeholder="Correct Answer" required>
+            <input type="text" class="a" name="q4a2" placeholder="B" required>
+            <input type="text" class="a" name="q4a3" placeholder="C" required>
+            <input type="text" class="a" name="q4a4" placeholder="D" required>
+        </div>
+        <br>
+        <input type="text" class="q" name="q5" placeholder="Question 5" required>
+        <div>
+          <input type="text" class="a" name="q5a1" placeholder="Correct Answer" required>
+            <input type="text" class="a" name="q5a2" placeholder="B" required>
+            <input type="text" class="a" name="q5a3" placeholder="C" required>
+            <input type="text" class="a" name="q5a4" placeholder="D" required>
+        </div>
+        <br>
+        <div class="text-font">
+        <input id="is-private" type="radio" name="public" value="false"> Make Quiz <b>Private?</b></input>
+        <br>
+        <input id="is-public" type="radio" name="public" checked="checked" value="true"> Make Quiz <b>Public?</b></input>
+        <br>
+        <br>
+        <input type="submit" id="create-quiz-button" value="Create Quiz">
+      </div>
+    </form>
+  </main>
+</body>
+</html>

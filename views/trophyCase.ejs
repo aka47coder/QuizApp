@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/trophyCase.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/resultsListener.js"></script>
+</head>
+<header>
+  <%- include('./nav') %>
+</header>
+<body>
+  <br>
+
+  <div class="main-container">
+    <div id="attempts">
+      <form id="quizzes-done">
+        <p id="all-time">ATTEMPTS:</p>
+        <!-- <p class="quizzes-completed">Quiz 1</p>
+        <p class="quizzes-completed">Quiz 2</p>
+        <p class="quizzes-completed">Quiz 3</p> -->
+      </form>
+    </div>
+
+
+    <div id="results-box">
+  <p>RESULTS:</p>
+      <div id="rc">
+        <% if (locals.results) { %>
+          <p id="ourflag"><%=locals.results.title%></p>
+          <p><%=locals.results.total%>/50</p>
+          <% } %>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

@@ -19,15 +19,20 @@
 </header>
 <body>
   <br>
+
   <div class="main-container">
-    <form id="quizzes-done">
-      <p id="all-time">ATTEMPTS:</p>
-      <!-- <p class="quizzes-completed">Quiz 1</p>
-      <p class="quizzes-completed">Quiz 2</p>
-      <p class="quizzes-completed">Quiz 3</p> -->
-    </form>
+    <div id="attempts">
+      <form id="quizzes-done">
+        <p id="all-time">ATTEMPTS:</p>
+        <!-- <p class="quizzes-completed">Quiz 1</p>
+        <p class="quizzes-completed">Quiz 2</p>
+        <p class="quizzes-completed">Quiz 3</p> -->
+      </form>
+    </div>
+
+
     <div id="results-box">
-      <h3>RESULTS</h3>
+  <p>RESULTS:</p>
       <div id="rc">
         <% if (locals.results) { %>
           <p id="ourflag"><%=locals.results.title%></p>
@@ -36,6 +41,7 @@
       </div>
     </div>
   </div>
+
 </body>
 
 </html>

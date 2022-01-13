@@ -20,7 +20,7 @@
     <form action="/quiz/create" method="POST">
         <label for="q1"></label><br>
         <h2 class="create-quiz-title white"> Create Your Quiz Here</h2>
-        <h5 class="white">Don't forget to name your quiz and place your correct answer in the proper field!</h5>
+        <h3 class="white">Don't forget to name your quiz and place your correct answer in the proper field!</h3>
         <br>
         <input type="text" class="title" name="title" placeholder="Title of my Quiz" required>
         <br>
@@ -68,12 +68,14 @@
             <input type="text" class="a" name="q5a4" placeholder="D" required>
         </div>
         <br>
+        <div class="text-font">
         <input id="is-private" type="radio" name="public" value="false"> Make Quiz <b>Private?</b></input>
         <br>
         <input id="is-public" type="radio" name="public" checked="checked" value="true"> Make Quiz <b>Public?</b></input>
         <br>
         <br>
         <input type="submit" id="create-quiz-button" value="Create Quiz">
+      </div>
     </form>
   </main>
 </body>

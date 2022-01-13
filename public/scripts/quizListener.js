@@ -40,7 +40,7 @@ $(document).ready(function() {
         });
       };
       //reset the timer and ask a new question
-      questionTime = 5;
+      questionTime = 10;
       cq++;
       //Check to see if the quiz is completed; if so, proceed to the results page.
       if ((cq) === quiz.length) {

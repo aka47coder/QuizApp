@@ -62,7 +62,7 @@ router.get('/:id', (req, res) => {
             name: req.session.name,
             results: data.rows[0]
         };
-        res.render('trophyCase', templateVars);
+        res.render('thiswillgetresults', templateVars);
     });
 });
 
@@ -96,7 +96,7 @@ router.post('/', (req, res) => {
 //GET /results/ BROWSE
 router.get('/', (req, res) => {
     const templateVars = {user_id: req.session.user_id, name: req.session.name,};
-    res.render('trophyCase', templateVars);
+    res.render('thiswillgetresults', templateVars);
 });
 
 

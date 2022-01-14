@@ -13,10 +13,10 @@ const cookieSession = require('cookie-session');
 app.use(bodyParser.urlencoded({ extended: true }));
 const db = require('./db/dbConnection.js');
 
-const userRouter = require('./routes/userRouter');
-const quizRouter = require('./routes/quizRouter');
-const resultsRouter = require('./routes/resultsRouter');
-const quizAPI = require('./routes/quizApiRouter');
+const user = require('./routes/user');
+const quiz = require('./routes/quiz');
+const showusresult = require('./routes/showusresult');
+const newapp = require('./routes/newapp1');
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
@@ -39,10 +39,10 @@ app.use(cookieSession({
 }));
 
 //our routes1
-app.use('/quiz', quizRouter);
-app.use('/login', userRouter);
-app.use('/results', resultsRouter);
-app.use('/quizzes', quizAPI);
+app.use('/quiz', quiz);
+app.use('/login', user);
+app.use('/results', showusresult);
+app.use('/quizzes', newapp);
 
 //homepage
 app.get("/", (req, res) => {

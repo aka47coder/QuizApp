@@ -10,10 +10,10 @@ $(document).ready(function() {
   let answer = null;
   let attemptNumber = 0;
 
-  
-  
 
-  
+
+
+
 
   const questionTimer = (quiz) => {
     questionTime -= 1;
@@ -40,7 +40,7 @@ $(document).ready(function() {
         });
       };
       //reset the timer and ask a new question
-      questionTime = 10;
+      questionTime = 5;
       cq++;
       //Check to see if the quiz is completed; if so, proceed to the results page.
       if ((cq) === quiz.length) {
@@ -55,7 +55,7 @@ $(document).ready(function() {
           window.location.href = `/results/${attemptNumber}`;
         })
 
-        
+
       } else {
         document.getElementById("title").innerText = quiz[0].title;
         document.getElementById("quiz-length-bar-label").innerText = `${cq+1}/${quiz.length}`;
@@ -82,11 +82,11 @@ $(document).ready(function() {
     $.each(this.get(), function(index, el) {
       var $el = $(el);
       var $find = $el.children();
-  
+
       $find.sort(function() {
         return 0.5 - Math.random();
       });
-  
+
       $el.empty();
       $find.appendTo($el);
     });
@@ -114,6 +114,6 @@ $(document).ready(function() {
     console.log("This is the number of the attempt", data.rows[0].id);
     attemptNumber = data.rows[0].id;
   });
-  
+
 
 });

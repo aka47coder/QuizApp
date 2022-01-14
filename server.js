@@ -38,7 +38,7 @@ app.use(cookieSession({
   maxAge: 24 * 60 * 60 * 1000 // 24 hours
 }));
 
-//our routes
+//our routes1
 app.use('/quiz', quizRouter);
 app.use('/login', userRouter);
 app.use('/results', resultsRouter);

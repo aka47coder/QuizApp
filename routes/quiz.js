@@ -12,7 +12,7 @@ WHERE quizzes.id = $1
 `, [req.params.id])
 .then((data) => {
 console.log("ID HREF", data.rows)
-res.render("takeQuiz", {data: data.rows})
+res.render("startquiznow", {data: data.rows})
 })
 })
 
@@ -60,7 +60,7 @@ res.send(data.rows);
 //GET /quiz/create
 router.get('/create', (req, res) => {
 const templateVars = {user_id: req.session.user_id, name: req.session.name}
-res.render('../views/createQuiz', templateVars);
+res.render('../views/thiswillcreatequiz', templateVars);
 });
 
 router.post('/create', (req, res) => {
@@ -202,7 +202,7 @@ console.log(err.message);
 //GET /quiz/:id
 router.get('/:id', (req, res) => {
 const templateVars = {user_id: req.session.user_id, name: req.session.name};
-res.render('takeQuiz', templateVars);
+res.render('startquiznow', templateVars);
 });
 
 //get the public quizzes

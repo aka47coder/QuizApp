@@ -1,6 +1,6 @@
-INSERT INTO users (name, password, email) VALUES ('Caden', 'password', 'caden@choi.ca');
-INSERT INTO users (name, password, email) VALUES ('Kira', 'password', 'kira@hotmale.com');
-INSERT INTO users (name, password, email) VALUES ('Terry', 'password', 'terry@hotmale.com');
+INSERT INTO users (name, password, email) VALUES ('ali', 'password', 'james@gmail.com');
+INSERT INTO users (name, password, email) VALUES ('number', 'password', 'number@gmail.com');
+INSERT INTO users (name, password, email) VALUES ('merry', 'password', 'meery@gmail.com');
 
 INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Lighthouse Labs Quiz', 'Miscellaneous', 1);
 INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'memequiz', 'bullet', 2);
